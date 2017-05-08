@@ -202,7 +202,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -267,7 +266,18 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <ProjectReference Include="..\Store.Data\Store.Data.csproj">
+      <Project>{ff4f0c13-31d0-4dd1-b78a-c544fe0cb595}</Project>
+      <Name>Store.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Store.Models\Store.Models.csproj">
+      <Project>{08bd8315-a37c-4389-aa9c-3dd24ed04361}</Project>
+      <Name>Store.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Store.Services\Store.Services.csproj">
+      <Project>{6f1d0325-19fc-4f54-a2e4-2ae0dccad0bb}</Project>
+      <Name>Store.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
