@@ -9,6 +9,7 @@
     using Microsoft.Owin.Security;
     using Models;
     using Store.Models.EntityModels;
+    using Store.Models.ViewModels.Account;
 
     [Authorize]
     public class AccountController : Controller
