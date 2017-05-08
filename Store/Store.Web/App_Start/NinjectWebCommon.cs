@@ -13,6 +13,8 @@ namespace Store.Web.App_Start
     using Data.Common;
     using System.Data.Entity;
     using Data;
+    using Services.Contracts;
+    using Services;
 
     public static class NinjectWebCommon 
     {
@@ -66,7 +68,14 @@ namespace Store.Web.App_Start
         {
             kernel.Bind(typeof(IDbRepository<>)).To(typeof(DbRepository<>));
             kernel.Bind<DbContext>().To<StoreDbContext>().InRequestScope();
-
+            kernel.Bind<ICategoryService>().To<CategoryService>().InRequestScope();
+            //kernel.Bind<IProductService>().To<ProductService>().InRequestScope();
+            //kernel.Bind<ISupplierService>().To<SupplierService>().InRequestScope();
+            //kernel.Bind<IShoppingService>().To<ShoppingService>().InRequestScope();
+            //kernel.Bind<IPurchaseService>().To<PurchaseService>().InRequestScope();
+            //kernel.Bind<IReviewService>().To<ReviewService>().InRequestScope();
+            //kernel.Bind<IUserService>().To<UserService>().InRequestScope();
+            //kernel.Bind<IAdminService>().To<AdminService>().InRequestScope();
         }        
     }
 }
