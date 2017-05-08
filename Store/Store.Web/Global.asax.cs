@@ -1,5 +1,7 @@
 ﻿namespace Store.Web
 {
+    using Infrastructure.Mapping;
+    using Models;
     using System.Web.Mvc;
     using System.Web.Optimization;
     using System.Web.Routing;
@@ -14,6 +16,9 @@
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            var autoMapperConfig = new AutoMapperConfig();
+            autoMapperConfig.Execute(typeof(IMappings).Assembly);
         }
     }
 }
