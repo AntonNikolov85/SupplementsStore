@@ -128,6 +128,7 @@
     <Compile Include="EntityModels\Review.cs" />
     <Compile Include="EntityModels\ShoppingCart.cs" />
     <Compile Include="EntityModels\Supplier.cs" />
+    <Compile Include="Enums\InStockStatus.cs" />
     <Compile Include="IMappings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Account\ExternalLoginConfirmationViewModel.cs" />
@@ -148,6 +149,10 @@
     <Compile Include="ViewModels\Manage\ManageLoginsViewModel.cs" />
     <Compile Include="ViewModels\Manage\SetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\VerifyPhoneNumberViewModel.cs" />
+    <Compile Include="ViewModels\Product\CreateProductViewModel.cs" />
+    <Compile Include="ViewModels\Product\DeleteProductViewModel.cs" />
+    <Compile Include="ViewModels\Product\EditProductViewModel.cs" />
+    <Compile Include="ViewModels\Product\ProductViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -159,6 +164,7 @@
       <Name>Store.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
