@@ -118,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BindingModels\CreateCategoryBindingModel.cs" />
+    <Compile Include="BindingModels\CreateSupplierBindingModel.cs" />
     <Compile Include="EntityModels\ApplicationUser.cs" />
     <Compile Include="EntityModels\Category.cs" />
     <Compile Include="EntityModels\Common\IAuditInfo.cs" />
@@ -153,6 +154,8 @@
     <Compile Include="ViewModels\Product\DeleteProductViewModel.cs" />
     <Compile Include="ViewModels\Product\EditProductViewModel.cs" />
     <Compile Include="ViewModels\Product\ProductViewModel.cs" />
+    <Compile Include="ViewModels\Supplier\DeleteSupplierViewModel.cs" />
+    <Compile Include="ViewModels\Supplier\SupplierViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

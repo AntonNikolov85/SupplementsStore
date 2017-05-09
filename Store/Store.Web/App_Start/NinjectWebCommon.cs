@@ -70,7 +70,7 @@ namespace Store.Web.App_Start
             kernel.Bind<DbContext>().To<StoreDbContext>().InRequestScope();
             kernel.Bind<ICategoryService>().To<CategoryService>().InRequestScope();
             kernel.Bind<IProductService>().To<ProductService>().InRequestScope();
-            //kernel.Bind<ISupplierService>().To<SupplierService>().InRequestScope();
+            kernel.Bind<ISupplierService>().To<SupplierService>().InRequestScope();
             //kernel.Bind<IShoppingService>().To<ShoppingService>().InRequestScope();
             //kernel.Bind<IPurchaseService>().To<PurchaseService>().InRequestScope();
             //kernel.Bind<IReviewService>().To<ReviewService>().InRequestScope();
