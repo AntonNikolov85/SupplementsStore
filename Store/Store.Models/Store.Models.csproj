@@ -117,6 +117,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BindingModels\AddRoleBindingModel.cs" />
     <Compile Include="BindingModels\CreateCategoryBindingModel.cs" />
     <Compile Include="BindingModels\CreateSupplierBindingModel.cs" />
     <Compile Include="EntityModels\ApplicationUser.cs" />
@@ -130,6 +131,7 @@
     <Compile Include="EntityModels\ShoppingCart.cs" />
     <Compile Include="EntityModels\Supplier.cs" />
     <Compile Include="Enums\InStockStatus.cs" />
+    <Compile Include="Enums\RoleType.cs" />
     <Compile Include="IMappings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Account\ExternalLoginConfirmationViewModel.cs" />
@@ -161,6 +163,9 @@
     <Compile Include="ViewModels\ShoppingCart\ShoppingProductViewModel.cs" />
     <Compile Include="ViewModels\Supplier\DeleteSupplierViewModel.cs" />
     <Compile Include="ViewModels\Supplier\SupplierViewModel.cs" />
+    <Compile Include="ViewModels\User\AddRoleViewModel.cs" />
+    <Compile Include="ViewModels\User\EditUserViewModel.cs" />
+    <Compile Include="ViewModels\User\UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
