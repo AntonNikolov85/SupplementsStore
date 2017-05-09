@@ -88,11 +88,15 @@
     <Compile Include="Common\IBaseDataService{T}.cs" />
     <Compile Include="Contracts\ICategoryService.cs" />
     <Compile Include="Contracts\IProductService.cs" />
+    <Compile Include="Contracts\IPurchaseService.cs" />
     <Compile Include="Contracts\IReviewService.cs" />
+    <Compile Include="Contracts\IShoppingService.cs" />
     <Compile Include="Contracts\ISupplierService.cs" />
     <Compile Include="ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchaseService.cs" />
     <Compile Include="ReviewService.cs" />
+    <Compile Include="ShoppingService.cs" />
     <Compile Include="SupplierService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -103,6 +107,10 @@
     <ProjectReference Include="..\Store.Data\Store.Data.csproj">
       <Project>{ff4f0c13-31d0-4dd1-b78a-c544fe0cb595}</Project>
       <Name>Store.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Store.Infrastructure\Store.Infrastructure.csproj">
+      <Project>{B6921624-5A82-4292-B107-B490A70426F5}</Project>
+      <Name>Store.Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\Store.Models\Store.Models.csproj">
       <Project>{08bd8315-a37c-4389-aa9c-3dd24ed04361}</Project>

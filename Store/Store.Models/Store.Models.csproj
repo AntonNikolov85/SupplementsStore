@@ -154,8 +154,11 @@
     <Compile Include="ViewModels\Product\DeleteProductViewModel.cs" />
     <Compile Include="ViewModels\Product\EditProductViewModel.cs" />
     <Compile Include="ViewModels\Product\ProductViewModel.cs" />
+    <Compile Include="ViewModels\Purchase\PurchaseViewModel.cs" />
     <Compile Include="ViewModels\Review\AllReviewsViewModel.cs" />
     <Compile Include="ViewModels\Review\ReviewViewModel.cs" />
+    <Compile Include="ViewModels\ShoppingCart\ItemViewModel.cs" />
+    <Compile Include="ViewModels\ShoppingCart\ShoppingProductViewModel.cs" />
     <Compile Include="ViewModels\Supplier\DeleteSupplierViewModel.cs" />
     <Compile Include="ViewModels\Supplier\SupplierViewModel.cs" />
   </ItemGroup>

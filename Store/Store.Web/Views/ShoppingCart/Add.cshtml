@@ -1,0 +1,59 @@
+﻿@using Store.Models.ViewModels.ShoppingCart
+@model ShoppingProductViewModel
+
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add Product to Shopping Cart</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+        </tr>
+
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Description)
+            </td>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <td>
+                @Html.TextBoxFor(model => model.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Price)
+            </td>
+        </tr>
+
+    </table>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-5 col-md-10">
+            <input type="submit" value="Buy" class="btn btn-success" />
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "all")
+</div>

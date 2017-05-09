@@ -8,6 +8,7 @@
     using System.Linq;
     using System.Web.Mvc;
     using System.Collections.Generic;
+    using Models.ViewModels.ShoppingCart;
 
     public class ProductService : BaseDataService<Product>, IProductService
     {
@@ -69,6 +70,18 @@
             }
 
             return model;
+        }
+
+        public IQueryable<Product> AllProductsInStock()
+        {
+            return this.GetAll().Where(p => p.IsInStock == true);
+        }
+
+        public void GetProductPriceAndName(ItemViewModel viewModel)
+        {
+            Product product = this.GetById(viewModel.ProductId);
+            viewModel.Name = product.Name;
+            viewModel.Price = product.Price;
         }
     }
 }
