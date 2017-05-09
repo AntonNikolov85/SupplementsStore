@@ -48,7 +48,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Description)
+            @Html.TextAreaFor(model => model.Description)
         </dd>
 
         <dt>
@@ -70,7 +70,7 @@
 </div>
 <p>
     @Html.ActionLink("Edit Product", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Add Review", "Create", "Reviews", new { id = Model.Id }, null) |
-    @Html.ActionLink("All Reviews ", "All", "Reviews", new { id = Model.Id }, null) |
+    @Html.ActionLink("Add Review", "Create", "Review", new { id = Model.Id }, null) |
+    @Html.ActionLink("All Reviews ", "All", "Review", new { id = Model.Id }, null) |
     @Html.ActionLink("Back to List", "All")
 </p>

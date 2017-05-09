@@ -1,0 +1,61 @@
+﻿@using Store.Models.ViewModels.Review
+@using Microsoft.AspNet.Identity
+@model IEnumerable<AllReviewsViewModel>
+
+@{
+    ViewBag.Title = "All";
+}
+
+<h2>All Reviews for Product</h2>
+
+<p>
+    <h3>
+        @Html.DisplayFor(model => model.First().ProductName)
+    </h3>
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ApplicationUserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Oppinion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rating)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicationUserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Oppinion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            @if (User.Identity.GetUserId() == Model.First().ApplicationUserId)
+            {
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            }
+            else
+            {
+                <td></td>
+            }
+        </tr>
+    }
+
+</table>
+
+<div>
+    @Html.ActionLink("Back to Products", "all", "product")
+</div>
