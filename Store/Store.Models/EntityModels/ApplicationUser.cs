@@ -7,6 +7,7 @@
     using System.Security.Claims;
     using System.Threading.Tasks;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     public class ApplicationUser : IdentityUser, IDeletableEntity, IAuditInfo
     {
@@ -20,6 +21,8 @@
             this.reviews = new HashSet<Review>();
         }
 
+        [Required]
+        [StringLength(20, MinimumLength = 5, ErrorMessage = "Name must be between 5 and 20 characters")]
         public string Name { get; set; }
 
         public bool IsDeleted { get; set; }

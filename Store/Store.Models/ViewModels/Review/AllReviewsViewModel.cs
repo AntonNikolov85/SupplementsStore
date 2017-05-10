@@ -3,13 +3,17 @@
     using AutoMapper;
     using Infrastructure.Mapping;
     using EntityModels;
+    using System.ComponentModel.DataAnnotations;
 
     public class AllReviewsViewModel : IMapTo<Review>, IMapFrom<Review>, IHaveCustomMappings
     {
         public int Id { get; set; }
 
+        [Required]
+        [StringLength(50, ErrorMessage = "Oppinion can not more than 50 characters")]
         public string Oppinion { get; set; }
 
+        [Range(1, 5, ErrorMessage = "Rating must be between 1 and 5")]
         public int Rating { get; set; }
 
         public string ApplicationUserId { get; set; }
