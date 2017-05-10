@@ -8,6 +8,7 @@
     using System.Web.Mvc;
 
     [RoutePrefix("product")]
+    [Authorize(Roles="Admin")]
     public class ProductController : BaseController
     {
         private IProductService productService;
@@ -18,9 +19,17 @@
         }
 
 
+        [HttpGet]
+        [Route("index")]
+        public ActionResult Index()
+        {
+            return this.View();
+        }
+
         // GET: Product
         [HttpGet]
         [Route("all")]
+        [AllowAnonymous]
         public ActionResult All()
         {
             var allProducts = this.productService.GetAll().To<ProductViewModel>().ToList();
@@ -31,6 +40,7 @@
         // GET: Product/Details/5
         [HttpGet]
         [Route("details/{id}")]
+        [AllowAnonymous]
         public ActionResult Details(int id)
         {
             Product productFromDb = this.productService.GetById(id);

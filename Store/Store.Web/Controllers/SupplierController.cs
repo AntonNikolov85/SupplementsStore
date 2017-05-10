@@ -9,6 +9,7 @@
     using System.Web.Mvc;
 
     [RoutePrefix("supplier")]
+    [Authorize(Roles="Admin")]
     public class SupplierController : BaseController
     {
         private ISupplierService supplierService;
@@ -19,9 +20,18 @@
         }
 
 
+        // GET: Index
+        [HttpGet]
+        [Route("index")]
+        public ActionResult Index()
+        {
+            return this.View();
+        }
+
         // GET: Supplier
         [HttpGet]
         [Route("all")]
+        [AllowAnonymous]
         public ActionResult All()
         {
             var allSuppliers = this.supplierService.GetAll().To<SupplierViewModel>().ToList();
@@ -32,6 +42,7 @@
         // GET: Supplier/Details/5
         [HttpGet]
         [Route("details/{id}")]
+        [AllowAnonymous]
         public ActionResult Details(int id)
         {
             Supplier supplierFromDb = this.supplierService.GetById(id);

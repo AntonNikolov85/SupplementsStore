@@ -75,7 +75,7 @@ namespace Store.Web.App_Start
             kernel.Bind<IPurchaseService>().To<PurchaseService>().InRequestScope();
             kernel.Bind<IReviewService>().To<ReviewService>().InRequestScope();
             kernel.Bind<IUserService>().To<UserService>().InRequestScope();
-            //kernel.Bind<IAdminService>().To<AdminService>().InRequestScope();
+            kernel.Bind<IAdminService>().To<AdminService>().InRequestScope();
         }        
     }
 }

@@ -10,6 +10,7 @@
     using System.Web.Mvc;
 
     [RoutePrefix("review")]
+    [Authorize]
     public class ReviewController : BaseController
     {
         private IReviewService reviewService;
@@ -23,6 +24,7 @@
         // GET: Review
         [HttpGet]
         [Route("all/{id}")]
+        [AllowAnonymous]
         public ActionResult All(int id)
         {
             IEnumerable<AllReviewsViewModel> reviews = this.reviewService.GetAllReviewsForProduct(id).To<AllReviewsViewModel>().ToList();

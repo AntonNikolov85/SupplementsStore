@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Product Section</h2>
+<hr />
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-10">
+            @Html.ActionLink("Add Product", "create", null, new { @class = "btn btn-primary" })
+            @Html.ActionLink("All Products", "all", null, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+</div>
+

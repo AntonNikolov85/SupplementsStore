@@ -5,11 +5,11 @@
     using Models.EntityModels;
     using Models.ViewModels.Category;
     using Services.Contracts;
-    using System.Data.Entity;
     using System.Linq;
     using System.Web.Mvc;
 
     [RoutePrefix("category")]
+    [Authorize(Roles ="Admin")]
     public class CategoryController : BaseController
     {
         private ICategoryService categoryService;
@@ -19,16 +19,25 @@
             this.categoryService = service;
         }
 
+
+        // GET: Index
+        [HttpGet]
+        [Route("index")]
+        public ActionResult Index()
+        {
+            return this.View();
+        }
+
         // GET: Category
         [HttpGet]
         [Route("all")]
+        [AllowAnonymous]
         public ActionResult All()
         {
             var allCategories = this.categoryService.GetAll().To<CategoryViewModel>().ToList();
 
             return View(allCategories);
         }
-
 
         // GET: Category/Create
         [HttpGet]

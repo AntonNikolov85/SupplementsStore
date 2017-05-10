@@ -3,29 +3,49 @@
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <img src="~/Content/Pump.jpg" , width="330" height="450" />
+    <img src="~/Content/Pump1.jpg" , width="350" height="450" />
+    <img src="~/Content/Pump2.jpg" , width="330" height="450" />
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>Start your body transformation with our best Products</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            In this section you could find our best Products, their Brands and how they have been produced. Take full picture of all possitive sides of each product
+            and how it will change your body.
         </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-10">
+                    @Html.ActionLink("See our Products", "All", "Product", null, new { @class = "btn btn-primary" })
+                </div>
+            </div>
+        </div>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>Get more info about our Suppliers</h2>
+        <p>
+            Find more about our Suppliers, about their production technology, best ingradients in their products. Learn more about their top products and athlets,
+            which are their representatives.
+        </p>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-10">
+                    @Html.ActionLink("See our Suppliers", "All", "Supplier", null, new { @class = "btn btn-primary" })
+                </div>
+            </div>
+        </div>
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>Our top Sellers</h2>
+        <p>Find more about our top sellers, their addresses and their working time.</p>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-10">
+                    @Html.ActionLink("Top Sellers", "All", "Seller", null, new { @class = "btn btn-primary" })
+                </div>
+            </div>
+        </div>
     </div>
 </div>
