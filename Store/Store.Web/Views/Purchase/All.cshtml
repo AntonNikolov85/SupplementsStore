@@ -1,0 +1,47 @@
+﻿@using Store.Models.ViewModels.Purchase
+@model IEnumerable<AllPurchasesViewModel>
+
+@{
+    ViewBag.Title = "All";
+}
+
+<h2>All Purchases</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Identity number
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalPrice)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPrice)
+            </td>
+            @if (User.IsInRole("Admin"))
+            {
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id })
+                </td>
+            }
+            else
+            {
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.Id })
+                </td>
+            }
+        </tr>
+    }
+
+</table>

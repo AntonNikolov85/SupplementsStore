@@ -225,6 +225,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\PurchaseController.cs" />
     <Compile Include="Controllers\ReviewController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\SupplierController.cs" />
@@ -333,6 +334,7 @@
     <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Supplier\Index.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Purchase\All.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Store.Data\Store.Data.csproj">
