@@ -21,7 +21,7 @@
         [Range(1, 99.99, ErrorMessage = "Price must be between 1 and 99.99")]
         public decimal Price { get; set; }
 
-        [Range(1, 5, ErrorMessage = "Quantity must be between 1 and 5")]
+        [Range(1, 10, ErrorMessage = "Quantity must be between 1 and 10")]
         public int Quantity { get; set; }
 
         public DateTime CreatedOn { get; set; }

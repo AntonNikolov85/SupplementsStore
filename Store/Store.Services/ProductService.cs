@@ -79,7 +79,7 @@
 
         public void GetProductPriceAndName(ItemViewModel viewModel)
         {
-            Product product = this.GetById(viewModel.ProductId);
+            Product product = this.GetById(viewModel.Id);
             viewModel.Name = product.Name;
             viewModel.Price = product.Price;
         }

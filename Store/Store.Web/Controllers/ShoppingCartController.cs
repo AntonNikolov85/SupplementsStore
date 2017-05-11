@@ -11,6 +11,7 @@
     using System.Web.Mvc;
 
     [RoutePrefix("shoppingcart")]
+    [Authorize]
     public class ShoppingCartController : BaseController
     {
         private IProductService productService;
@@ -90,13 +91,17 @@
         [HttpPost, ActionName("add")]
         [Route("add/{id}")]
         [ValidateAntiForgeryToken]
-        public ActionResult AddProductToShoppingCart([Bind(Include = "Id, Quantity")] ShoppingProductViewModel viewModel)
+        public ActionResult AddProductToShoppingCart([Bind(Include = "Id, Price, Quantity")] ItemViewModel viewModel)
         {
+            //ItemViewModel model = this.shoppingService.CreateItem(viewModel);
+            //this.productService.GetProductPriceAndName(model);
+            viewModel.Name = this.productService.GetById(viewModel.Id).Name;
+
             if (ModelState.IsValid)
             {
-                ItemViewModel model = this.shoppingService.CreateItem(viewModel);
-                this.productService.GetProductPriceAndName(model);
-                cartItems.Add(model);
+                //ItemViewModel model = this.shoppingService.CreateItem(viewModel);
+                //this.productService.GetProductPriceAndName(model);
+                cartItems.Add(viewModel);
 
                 return this.RedirectToAction("all");
             }
@@ -106,6 +111,7 @@
             ShoppingProductViewModel productForShopping = this.Mapper.Map<ShoppingProductViewModel>(productFromDb);
 
             return View(productForShopping);
+            //return View();
         }
 
         // GET: ShoppingCart/Remove
@@ -113,7 +119,7 @@
         [Route("remove/{id}")]
         public ActionResult RemoveProductFromShoppingCart(int id)
         {
-            cartItems.RemoveAll(i => i.ProductId == id);
+            cartItems.RemoveAll(i => i.Id == id);
 
             return this.RedirectToAction("all");
         }

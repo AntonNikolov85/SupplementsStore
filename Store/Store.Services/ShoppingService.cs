@@ -55,7 +55,8 @@
         {
             ItemViewModel model = new ItemViewModel()
             {
-                ProductId = viewModel.Id,
+                Id = viewModel.Id,
+                Price = viewModel.Price,
                 Quantity = viewModel.Quantity
             };
 
